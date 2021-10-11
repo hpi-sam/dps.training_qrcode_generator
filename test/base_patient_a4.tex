@@ -1,0 +1,41 @@
+\documentclass[a4paper,oneside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[forget]{qrcode}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{graphicx}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm,verbose,nohead,nofoot]{geometry}
+
+\begin{document}
+
+\pagestyle{empty}
+\begin{center}
+	\begin{tikzpicture}
+		% Background Image 
+		\node [opacity=0.5] (Patient) {%
+			\includegraphics[height=0.88\textheight]{patient}
+		};
+		
+		% Title
+		\node [above=of Patient,font=\huge,scale=2] () {\sffamily Patient \textbf{\Huge A} 20 P - 1 D XA};
+		
+		% QR Code
+		\node [scale=2.2] at (0,2.5) (QR) {\qrcode[level=M]{container-1-1}};
+		
+		% Footer / Label
+		\node [minimum width=\textwidth, below=-1cm of Patient] (BaseLabel) {};
+		\node [anchor=south east, left=0cm of BaseLabel.east, font=\tiny, text centered, text width=3cm] (Label) {
+		 	{\sffamily \large dps.training} \\ 
+			Software \textcopyright{}HPI \\ 
+			Datensatz \copyright{}BBK/BABZ \\
+			manv-simulation.de
+		};
+		\node [left=0cm of Label, anchor=east] (ImgLabel) {\includegraphics[width=1.2cm, trim=7cm 7cm 7cm 7cm,clip]{icon_player}};
+		
+	\end{tikzpicture}%
+\end{center}%
+
+
+
+\end{document}
+

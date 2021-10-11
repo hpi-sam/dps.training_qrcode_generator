@@ -1,0 +1,40 @@
+\documentclass[a4,oneside]{minimal}
+\usepackage[forget]{qrcode}
+\usepackage{tikz}
+
+% Program to draw a QR code and insert an image in
+% its center without disrupting the contents
+% v.santos, 2020
+
+\begin{document}
+
+% Fraction of QR code width to replace
+% Maximal value depends on the level of robustness of QR code
+\def\wFrac{0.3}%   % 0.3 is usually OK for M (sometimes can go up to 0.4 for H)
+
+% Dimension registers to use later
+\newdimen\qrWidth
+\newdimen\imWidth
+
+% The actual desired size of the QR code in the page (should not affect the result)
+\setlength{\qrWidth}{4cm}%
+\pgfmathsetlength{\imWidth}{\wFrac*\qrWidth}
+
+\begin{tikzpicture}
+	\node [anchor=south west,inner sep=0] at (0,0) (QR) {
+		\qrcode[height=\qrWidth,level=Q]{container-1-1}
+	};
+	\begin{scope}[x={(QR.south east)},y={(QR.north west)}]
+		\node [inner sep=0,anchor=south west] at (0.5-\wFrac/2,0.5-\wFrac/2)
+		{
+			\includegraphics[width=\imWidth,height=\imWidth]{icon_player.png}
+		};
+	\end{scope}
+	\node [anchor=south west,inner sep=0] at (0,10) (QR2) {
+		\qrcode[height=\qrWidth,level=M]{container-1-1}
+	};
+
+\end{tikzpicture}%
+
+\end{document}
+
