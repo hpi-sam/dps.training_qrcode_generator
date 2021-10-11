@@ -13,14 +13,14 @@
 	\begin{tikzpicture}
 		% Background Image 
 		\node [opacity=0.5] (Vehicle) {%
-			\includegraphics[width=\textwidth]{vehicle}
+			\includegraphics[width=\textwidth]{image_vehicle}
 		};
 		
 		% Title
 		\node [above=4cm of Vehicle,font=\Huge,scale=2] () {\sffamily RTW 1 / 83 / 1};
 		
 		% QR Code
-		\node [scale=2.2] at (0,2.5) (QR) {\qrcode[level=M]{container-1-1}};
+		\node [scale=2.2] at (-3,0.5) (QR) {\qrcode[level=M]{container-1-1}};
 		
 		% Footer / Label
 		\node [minimum width=\textwidth, below=5cm of Vehicle] (BaseLabel) {};
