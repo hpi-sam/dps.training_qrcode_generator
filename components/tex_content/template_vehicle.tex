@@ -8,10 +8,12 @@
 		};
 		
 		% Title
-		\node [above=4cm of Vehicle,font=\Huge,scale=2] () {\sffamily <<NAME>>};
+		\node [above=4cm of Vehicle,font=\huge,scale=2] () {\sffamily <<NAME>> };
 		
 		% QR Code
-		\node [scale=2.2] at (-3,0.5) (QR) {\qrcode[level=M]{container-<<CTYPE>>-<<CNUMBER>>}};
+		\node [scale=2.2] at (-3,0.5) (QR) {
+			\qrcode[level=M]{container-<<CTYPE>>-<<CNUMBER>>}
+		};
 		
 		% Footer / Label
 		\node [minimum width=\textwidth, below=5cm of Vehicle] (BaseLabel) {};
