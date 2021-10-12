@@ -1,3 +1,6 @@
 *.aux
 *.log
 *.synctex.gz
+latex_test/base*.pdf
+qr-code-generator.sublime-project
+qr-code-generator.sublime-workspace
