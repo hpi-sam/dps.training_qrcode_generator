@@ -5,7 +5,7 @@ import subprocess
 
 
 # Define variables
-CSV_INPUT = "patient.csv"
+CSV_INPUT = "patients.csv"
 IMG_PATIENT = "components/img/image_patient.pdf"
 IMG_APPICON = "components/img/icon_player.png"
 TEX_BEGIN = "components/tex_base/begin_a4.tex"
