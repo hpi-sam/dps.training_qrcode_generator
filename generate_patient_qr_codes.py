@@ -1,4 +1,4 @@
-import os.path
+import os
 import shutil
 import csv
 import subprocess
@@ -16,6 +16,11 @@ DIR_OUTPUT = "output"
 OUTPUT_TEX_FILE = "patient_a4.tex"
 OUTPUT_PDF_FILE = "patient_a4.pdf"
 
+# Create output and working directory if not exists
+if not os.path.exists(DIR_OUTPUT):
+	os.makedirs(DIR_OUTPUT)
+if not os.path.exists(DIR_WORKING):
+	os.makedirs(DIR_WORKING)
 
 # Copy image files to temp directory
 shutil.copy(IMG_APPICON, DIR_WORKING)
