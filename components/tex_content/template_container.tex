@@ -1,0 +1,29 @@
+
+\pagestyle{empty}
+\begin{center}
+	\begin{tikzpicture}
+		% Background Image 
+		\node [opacity=0.5] (Image) {%
+			\includegraphics[width=\textwidth]{image_container}
+		};
+		
+		% Title
+		\node [above=1cm of Image,font=\huge,scale=2,text centered, text width=0.5\textwidth] () {
+			\sffamily <<CONTAINERNAME>>\\{\Large <<VEHICLENAME>>}
+		};
+		
+		% QR Code
+		\node [scale=2.2] at (0,-2.5) (QR) {\qrcode[level=M]{container-<<CTYPE>>-<<CNUMBER>>}};
+		
+		% Footer / Label
+		\node [minimum width=\textwidth, below=1cm of Image] (BaseLabel) {};
+		\node [anchor=south east, left=0cm of BaseLabel.east, font=\tiny, text centered, text width=3cm] (Label) {
+		 	{\sffamily \large dps.training} \\ 
+			Software \textcopyright{}HPI \\ 
+			Datensatz \copyright{}BBK/BABZ \\
+			manv-simulation.de
+		};
+		\node [left=0cm of Label, anchor=east] (ImgLabel) {\includegraphics[width=1.2cm, trim=7cm 7cm 7cm 7cm,clip]{icon_player}};
+		
+	\end{tikzpicture}%
+\end{center}%
