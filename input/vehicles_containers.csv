@@ -1,6 +1,6 @@
 container,RTW,NEF
 Notfallkoffer,1,0
 Chirurgiekoffer,1,1
-Kreislaufkoffer,0,1
-Atmungskoffer,0,1
-BTM-Tasche,0,1
+Kreislaufkoffer NEF,0,1
+Atmungskoffer NEF,0,1
+BTM-Tasche NEF,0,1
