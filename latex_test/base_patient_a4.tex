@@ -21,6 +21,10 @@
 		
 		% QR Code
 		\node [scale=2.2] at (0,2.5) (QR) {\qrcode[level=M]{container-1-1}};
+
+		% Note "Gehfähig"
+		\node [below=3cm of QR, anchor=north, rounded corners=1cm, line width=0.2cm, draw=purple, color=purple, fill=purple, fill opacity=0.2, text opacity=1, draw opacity=1, minimum width=1.5cm, minimum height=1.5cm,font=\Huge, scale=4] (G) {\sffamily \textbf{G}};
+		\node [above=0.5cm of G.south, anchor=south, color=purple, font=\Huge] () {\sffamily Gehfähig};
 		
 		% Footer / Label
 		\node [minimum width=\textwidth, below=-1cm of Patient] (BaseLabel) {};

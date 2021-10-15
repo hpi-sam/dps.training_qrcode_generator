@@ -10,6 +10,7 @@ IMG_PATIENT = "components/img/image_patient.pdf"
 IMG_APPICON = "components/img/icon_player.png"
 TEX_BEGIN = "components/tex_base/begin_a4.tex"
 TEX_CONTENT = "components/tex_content/template_patient.tex"
+TEX_CONTENT_EXTRA = "components/tex_content/block_patient_walking.tex"
 TEX_END= "components/tex_base/end.tex"
 DIR_WORKING = "output/temp"
 DIR_OUTPUT = "output"
@@ -48,6 +49,7 @@ with open(CSV_INPUT) as csv_file:
 		patient_set = row[1]
 		state_intitial = row[2]
 		state_progression = row[3]
+		patient_can_walk = bool(row[4])
 
 		# Open template
 		input_file = open(TEX_CONTENT)
@@ -59,6 +61,15 @@ with open(CSV_INPUT) as csv_file:
 		temp_text = temp_text.replace("<<SET>>", patient_set)
 		temp_text = temp_text.replace("<<INITIAL>>", state_intitial)
 		temp_text = temp_text.replace("<<PROGRESSION>>", state_progression)
+
+		# Add "can walk" information to patient
+		if patient_can_walk:
+			extra_input_file = open(TEX_CONTENT_EXTRA)
+			extra_input_text = extra_input_file.read()
+			extra_input_file.close()
+			temp_text = temp_text.replace("<<EXTRABLOCK>>", extra_input_text)
+		else:
+			temp_text = temp_text.replace("<<EXTRABLOCK>>", "")
 
 		# Write to output file
 		output_file.write(temp_text)
