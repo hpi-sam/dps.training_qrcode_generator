@@ -6,7 +6,7 @@ import subprocess
 
 
 # Define variables
-CSV_INPUT_LIST = "input/vehicles_potsdam.csv"
+CSV_INPUT_LIST = "input/vehicles_generic.csv"
 CSV_INPUT_MAPPING = "input/containers_per_vehicle_type.csv"
 CSV_INPUT_IDS = "input/containers.csv"
 IMG_CONTAINER = "components/img/image_container.pdf"
